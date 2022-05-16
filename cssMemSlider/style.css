@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Macondo", serif;
+  font-size: 1.4rem;
+  background-color: #000000;
+  color: #bdae82;
+}
+
+.container {
+  display: grid;
+  width: 60vw;
+  margin: 5vh auto;
+  grid-template-areas: 
+    "images images"
+    "texts buttons";
+  gap: 1rem;
+}
+
+input {
+  display: none;
+}
+
+.images {
+  width: 60vw;
+  grid-area: images;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+.image { 
+  display: block;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+}
+
+.img-wrapper {
+  display: flex;
+  width: 400%;
+  transition: 0.5s;
+}
+
+.texts {
+  height: 5vh;
+  grid-area: texts;
+  overflow: hidden;
+}
+
+.text-wrapper {
+  height: 5.1vh;
+  transition: 0.5s;
+}
+
+.text {
+height: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  gap: 0.3rem;
+  grid-area: buttons;
+}
+
+.button {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 0.1rem solid #bdae82;
+  background-color: #bdae82;
+  transition: 0.5s;
+}
+
+.label {
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.label:hover .button {
+  background-color: #ffffff;
+  border: 0.1rem solid #ffffff;
+}
+
+.label:active .button {
+  background-color: rgba(190, 175, 138, 0.253);
+  border: 0.1rem solid rgba(190, 175, 138, 0.253);
+}
+
+#r1:checked~.buttons>.label1>.button {
+  background-color: transparent;
+}
+#r2:checked~.buttons>.label2>.button {
+  background-color: transparent;
+}
+#r3:checked~.buttons>.label3>.button {
+  background-color: transparent;
+}
+#r4:checked~.buttons>.label4>.button {
+  background-color: transparent;
+}
+
+#r1:checked~.images>.img-wrapper.active {
+  transform: translateX(0);
+}
+#r2:checked~.images>.img-wrapper.active {
+  transform: translateX(-25%);
+}
+#r3:checked~.images>.img-wrapper.active {
+  transform: translateX(-50%);
+}
+#r4:checked~.images>.img-wrapper.active {
+  transform: translateX(-75%);
+}
+
+#r1:checked~.texts>.text-wrapper.active {
+  transform: translateY(0);
+}
+#r2:checked~.texts>.text-wrapper.active {
+  transform: translateY(-100%);
+}
+#r3:checked~.texts>.text-wrapper.active {
+  transform: translateY(-200%);
+}
+#r4:checked~.texts>.text-wrapper.active {
+  transform: translateY(-300%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80vw;
+    margin: 3vh auto;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+  .button {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .buttons {
+    gap: 0.1rem;
+  }
+
+  .images {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 540px) {
+  body {
+    font-size: 1rem;
+  }
+  .button {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    grid-template-areas: 
+      "images"
+      "buttons"
+      "texts";
+    gap: 0.5rem;
+  }
+
+  .button {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
