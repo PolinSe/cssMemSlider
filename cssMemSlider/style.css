@@ -31,6 +31,23 @@ input {
   overflow: hidden;
 }
 
+img {
+  width: 100%;
+}
+
+.image { 
+  display: block;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+}
+
+.img-wrapper {
+  display: flex;
+  width: 400%;
+  transition: 0.5s;
+}
+
 .buttons {
   display: flex;
   justify-content: end;
@@ -61,6 +78,33 @@ input {
   background-color: rgba(190, 175, 138, 0.253);
   border: 0.1rem solid rgba(190, 175, 138, 0.253);
 }
+
+#r1:checked~.buttons>.label1>.button {
+  background-color: transparent;
+}
+#r2:checked~.buttons>.label2>.button {
+  background-color: transparent;
+}
+#r3:checked~.buttons>.label3>.button {
+  background-color: transparent;
+}
+#r4:checked~.buttons>.label4>.button {
+  background-color: transparent;
+}
+
+#r1:checked~.images>.img-wrapper.active {
+  transform: translateX(0);
+}
+#r2:checked~.images>.img-wrapper.active {
+  transform: translateX(-25%);
+}
+#r3:checked~.images>.img-wrapper.active {
+  transform: translateX(-50%);
+}
+#r4:checked~.images>.img-wrapper.active {
+  transform: translateX(-75%);
+}
+
 
 
 
