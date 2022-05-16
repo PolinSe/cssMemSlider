@@ -48,6 +48,21 @@ img {
   transition: 0.5s;
 }
 
+.texts {
+  height: 5vh;
+  grid-area: texts;
+  overflow: hidden;
+}
+
+.text-wrapper {
+  height: 5.1vh;
+  transition: 0.5s;
+}
+
+.text {
+height: 100%;
+}
+
 .buttons {
   display: flex;
   justify-content: end;
@@ -104,6 +119,20 @@ img {
 #r4:checked~.images>.img-wrapper.active {
   transform: translateX(-75%);
 }
+
+#r1:checked~.texts>.text-wrapper.active {
+  transform: translateY(0);
+}
+#r2:checked~.texts>.text-wrapper.active {
+  transform: translateY(-100%);
+}
+#r3:checked~.texts>.text-wrapper.active {
+  transform: translateY(-200%);
+}
+#r4:checked~.texts>.text-wrapper.active {
+  transform: translateY(-300%);
+}
+
 
 
 
