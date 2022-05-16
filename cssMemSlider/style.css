@@ -10,3 +10,36 @@ body {
   background-color: #000000;
   color: #bdae82;
 }
+
+.container {
+  display: grid;
+  width: 60vw;
+  margin: 5vh auto;
+  grid-template-areas: 
+    "images images"
+    "texts buttons";
+  gap: 1rem;
+}
+
+input {
+  display: none;
+}
+
+.images {
+  width: 60vw;
+  grid-area: images;
+  overflow: hidden;
+}
+
+.texts {
+  height: 5vh;
+  grid-area: texts;
+  overflow: hidden;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  gap: 0.3rem;
+  grid-area: buttons;
+}
