@@ -133,25 +133,53 @@ height: 100%;
   transform: translateY(-300%);
 }
 
+@media (max-width: 768px) {
+  .container {
+    width: 80vw;
+    margin: 3vh auto;
+  }
 
+  body {
+    font-size: 1.2rem;
+  }
+  .button {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .buttons {
+    gap: 0.1rem;
+  }
 
-
-
-
-
-
-
-
-
-.texts {
-  height: 5vh;
-  grid-area: texts;
-  overflow: hidden;
+  .images {
+    width: 80vw;
+  }
 }
 
-.buttons {
-  display: flex;
-  justify-content: end;
-  gap: 0.3rem;
-  grid-area: buttons;
+@media (max-width: 540px) {
+  body {
+    font-size: 1rem;
+  }
+  .button {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    grid-template-areas: 
+      "images"
+      "buttons"
+      "texts";
+    gap: 0.5rem;
+  }
+
+  .button {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
 }
